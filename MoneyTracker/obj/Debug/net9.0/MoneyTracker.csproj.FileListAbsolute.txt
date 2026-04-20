@@ -26,3 +26,4 @@ D:\MoneyTracker\MoneyTracker\obj\Debug\net9.0\refint\MoneyTracker.dll
 D:\MoneyTracker\MoneyTracker\obj\Debug\net9.0\MoneyTracker.pdb
 D:\MoneyTracker\MoneyTracker\obj\Debug\net9.0\MoneyTracker.genruntimeconfig.cache
 D:\MoneyTracker\MoneyTracker\obj\Debug\net9.0\ref\MoneyTracker.dll
+D:\MoneyTracker\MoneyTracker\obj\Debug\net9.0\MoneyTracker.sourcelink.json
