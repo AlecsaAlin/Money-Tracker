@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj": {}
+    "d:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj": {}
   },
   "projects": {
-    "D:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj": {
+    "d:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj",
+        "projectUniqueName": "d:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj",
         "projectName": "MoneyTracker",
-        "projectPath": "D:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj",
+        "projectPath": "d:\\MoneyTracker\\MoneyTracker\\MoneyTracker.csproj",
         "packagesPath": "C:\\Users\\balan\\.nuget\\packages\\",
-        "outputPath": "D:\\MoneyTracker\\MoneyTracker\\obj\\",
+        "outputPath": "d:\\MoneyTracker\\MoneyTracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

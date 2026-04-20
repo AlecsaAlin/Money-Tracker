@@ -14,6 +14,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+var movements = new List<MoneyMovement>();
+
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -33,9 +35,27 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.MapGet("/summary", () =>
+{
+    var income = movements.Where(m => m.Type == MoneyMovementType.Income).Sum(m => m.Amount);
+    var expenses = movements.Where(m => m.Type == MoneyMovementType.Expense).Sum(m => m.Amount);
+    return new Summary(income, expenses, income - expenses);
+})
+.WithName("GetSummary");
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+enum MoneyMovementType
+{
+    Income,
+    Expense
+}
+
+record MoneyMovement(decimal Amount, MoneyMovementType Type);
+
+record Summary(decimal TotalIncome, decimal TotalExpenses, decimal Balance);
