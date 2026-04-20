@@ -11,9 +11,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+<<<<<<< HEAD
+var movements = new List<MoneyMovement>();
+
+var summaries = new[]
+{
+    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+};
+=======
 var sync = new object();
 var transactions = new List<Transaction>();
 var nextId = 0;
+>>>>>>> e89401b3225baeabd9b6a03d39d5b20343a639a2
 
 app.MapGet("/transactions", () =>
 {
@@ -53,8 +62,33 @@ app.MapDelete("/transactions/{id:int}", (int id) =>
     }
 });
 
+app.MapGet("/summary", () =>
+{
+    var income = movements.Where(m => m.Type == MoneyMovementType.Income).Sum(m => m.Amount);
+    var expenses = movements.Where(m => m.Type == MoneyMovementType.Expense).Sum(m => m.Amount);
+    return new Summary(income, expenses, income - expenses);
+})
+.WithName("GetSummary");
+
 app.Run();
 
+<<<<<<< HEAD
+record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+
+enum MoneyMovementType
+{
+    Income,
+    Expense
+}
+
+record MoneyMovement(decimal Amount, MoneyMovementType Type);
+
+record Summary(decimal TotalIncome, decimal TotalExpenses, decimal Balance);
+=======
 record Transaction(int Id, decimal Amount, string Type, string Category);
 
 record CreateTransactionRequest(decimal Amount, string? Type, string? Category);
+>>>>>>> e89401b3225baeabd9b6a03d39d5b20343a639a2
